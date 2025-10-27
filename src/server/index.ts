@@ -45,9 +45,17 @@ app.use(async (req, res, next) => {
   }
 })
 
-// Routes
+// API Routes
 app.use('/api/execute', codeExecutionRoutes)
 app.use('/api/ai', aiRoutes)
+
+// Serve static files in production
+if (config.nodeEnv === 'production') {
+  app.use(express.static('dist'))
+  app.get('*', (req, res) => {
+    res.sendFile('dist/index.html', { root: '.' })
+  })
+}
 
 // Health check
 app.get('/health', (req, res) => {
