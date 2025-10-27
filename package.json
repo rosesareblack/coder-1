@@ -4,10 +4,10 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
-    "dev:frontend": "parcel serve src/main.tsx --port 3000",
+    "dev:frontend": "node scripts/dev-server.js",
     "dev:backend": "tsx watch src/server/index.ts",
     "build": "npm run build:frontend && npm run build:backend",
-    "build:frontend": "parcel build src/main.tsx --dist-dir dist --public-url ./",
+    "build:frontend": "node scripts/build.js",
     "build:backend": "tsc src/server/**/*.ts --outDir dist/server",
     "start": "node dist/server/index.js",
     "docker:up": "docker-compose up --build",
@@ -58,14 +58,7 @@
     "concurrently": "^8.2.0",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.27",
-    "parcel": "^2.9.3",
-    "@parcel/transformer-image": "^2.9.3",
-    "@parcel/transformer-svg": "^2.9.3"
-  },
-  "@parcel": {
-    "extends": "@parcel/config-default",
-    "transformers": {
-      "*.{ts,tsx}": ["@parcel/transformer-typescript-tsc"]
-    }
+    "esbuild": "^0.18.17",
+    "serve-static": "^1.15.0"
   }
 }

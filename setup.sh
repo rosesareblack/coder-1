@@ -5,7 +5,7 @@
 
 set -e
 
-echo "🚀 Setting up Open Source AI Coder..."
+echo "🚀 Setting up Open Source AI Coder with esbuild (Speed King!)..."
 echo ""
 
 # Check if Node.js is installed
@@ -53,14 +53,14 @@ mkdir -p logs
 mkdir -p temp
 
 echo ""
-echo "🎉 Setup complete!"
+echo "🎉 Setup complete! (Powered by esbuild - the Speed King! ⚡)"
 echo ""
 echo "Next steps:"
 echo "1. Edit .env.local and add your Gemini API key:"
 echo "   GEMINI_API_KEY=your_key_here"
 echo ""
 echo "2. Start development server:"
-echo "   npm run dev"
+echo "   npm run dev  (Lightning-fast builds with esbuild!)"
 echo ""
 echo "3. Open your browser to:"
 echo "   Frontend: http://localhost:3000"

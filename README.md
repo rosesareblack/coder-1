@@ -49,7 +49,7 @@ A full-featured, open source AI-powered code editor with execution capabilities.
    ```
    
    This starts:
-   - Frontend: http://localhost:3000 (Parcel dev server)
+   - Frontend: http://localhost:3000 (esbuild dev server - lightning fast! ⚡)
    - Backend: http://localhost:3001 (Express API)
 
 ### Production Deployment
@@ -92,6 +92,10 @@ A full-featured, open source AI-powered code editor with execution capabilities.
 │       └── routes/      # API endpoints
 │           ├── execution.ts  # Code execution
 │           └── ai.ts         # AI integration
+├── scripts/             # esbuild build scripts
+│   ├── dev-server.js   # Lightning-fast dev server
+│   └── build.js        # Production build script
+├── public/              # Static assets for dev
 ├── dist/                # Built frontend
 ├── package.json         # Dependencies
 ├── .env.local          # Environment variables
@@ -222,7 +226,7 @@ npm run type-check
 
 ## 📈 Performance
 
-- **Frontend**: Parcel bundler for fast builds and HMR
+- **Frontend**: esbuild bundler (the speed king! ⚡) for lightning-fast builds and HMR
 - **Backend**: Express.js with connection pooling
 - **Database**: Optional SQLite for session management
 - **Caching**: Response caching for AI requests
